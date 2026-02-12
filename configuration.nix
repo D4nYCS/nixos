@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./macos_broadcom_package.nix
     ];
 
   # Bootloader.
@@ -91,12 +92,6 @@
 	};
 };  
   
-
-  # nix allow broadcom driver  
-  nixpkgs.config.permittedInsecurePackages = [
-	"broadcom-sta-6.30.223.271-59-6.12.69"
-  ];
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
