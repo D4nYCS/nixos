@@ -59,6 +59,9 @@
     git
     winboat
     freerdp
+    libvirt
+    qemu
+    swptm
   ];
   
   programs.hyprland.enable = true;
@@ -87,12 +90,9 @@
     };
     libvirtd = {
       enable = true;
-      package = with pkgs.stable; libvirt;
       qemu = {
-        package = with pkgs.stable; qemu;
         swtpm = {
           enable = false;
-          package = with pkgs.stable; swtpm;
         };
       };
     };
