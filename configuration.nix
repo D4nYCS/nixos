@@ -61,7 +61,7 @@
     freerdp
     libvirt
     qemu
-    swptm
+    swtpm
   ];
   
   programs.hyprland.enable = true;
