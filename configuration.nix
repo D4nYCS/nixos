@@ -45,7 +45,7 @@
   users.users.dany = {
     isNormalUser = true;
     description = "dany";
-    extraGroups = [ "networkmanager" "wheel" "podman" ];
+    extraGroups = [ "networkmanager" "wheel" "podman" "libvirtd" ];
     packages = with pkgs; [];
   };
   
@@ -57,12 +57,15 @@
     rofi
     firefox
     git
+    winboat
+    freerdp
   ];
   
   programs.hyprland.enable = true;
   programs.thunar.enable = true;
   programs.xfconf.enable = true;
   programs.neovim.enable = true; 
+  programs.virt-manager.enable = true;
 
   services.displayManager = {
     sddm = {
@@ -82,6 +85,19 @@
       dockerCompat = true;
       defaultNetwork.settings.dns_enabled = true; # Required for containers under podman-compose to be able to talk to each other.
     };
+    libvirtd = {
+      enable = true;
+      package = with pkgs.stable; libvirt;
+      qemu = {
+        package = with pkgs.stable; qemu;
+        swtpm = {
+          enable = false;
+          package = with pkgs.stable; swtpm;
+        };
+      };
+    };
+    spiceUSBRedirection.enable = true;
+    services.spice-vdagentd.enable = true;
   };
 
   # Some programs need SUID wrappers, can be configured further or are
