@@ -1,0 +1,12 @@
+[includeIf "gitdir: path_to_git_repo"]
+	path = path_to_gitconfig_file
+[core]
+	attributesFile = /home/dany/git/nixos/.gitattributes
+[filter "machine_specifc_config"]
+	clean =	sed 's%./machine-configuration.nix%MACHINE_CONFIG_FILE%'
+	smudge = sed 's%MACHINE_CONFIG_FILE%.machine-configuration.nix%'
+
+[filter "hostname_for_machine"]
+	clean =	sed 's%machine-nix%MACHINE_HOSTNAME%'
+	smudge = sed 's%MACHINE_HOSTNAME%machine-nix%'
+	

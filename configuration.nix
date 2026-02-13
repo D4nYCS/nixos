@@ -8,7 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./macos_broadcom_package.nix
+      ./macbook-configuration.nix
     ];
 
   # Bootloader.
