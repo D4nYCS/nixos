@@ -62,6 +62,7 @@
     libvirt
     qemu
     swtpm
+    waybar
   ];
   
   programs.hyprland.enable = true;
