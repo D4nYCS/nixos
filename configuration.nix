@@ -63,6 +63,7 @@
     qemu
     swtpm
     waybar
+    vscode
   ];
   
   programs.hyprland.enable = true;
