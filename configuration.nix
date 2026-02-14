@@ -65,6 +65,7 @@
     waybar
     vscode
     ripgrep
+    firefox
   ];
   
   programs.hyprland.enable = true;
