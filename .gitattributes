@@ -1,1 +1,1 @@
-configuration.nix filter=machinespecifcconfig
+./configuration.nix filter=machinespecifcconfig
