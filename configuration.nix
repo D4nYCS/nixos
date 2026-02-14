@@ -8,14 +8,14 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./homebase-configuration.nix
+      ./macbook-configuration.nix
     ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "homebase-nix";
+  networking.hostName = "macbook-nix";
   networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Berlin";
