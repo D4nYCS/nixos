@@ -55,7 +55,7 @@
     curl
     alacritty
     rofi
-    firefox
+    chromium
     git
     winboat
     freerdp
