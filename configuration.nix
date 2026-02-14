@@ -64,6 +64,7 @@
     swtpm
     waybar
     vscode
+    ripgrep
   ];
   
   programs.hyprland.enable = true;

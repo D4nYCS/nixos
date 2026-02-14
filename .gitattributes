@@ -1,2 +1,2 @@
-/home/dany/git/nixos/configuration.nix filter=machine_specifc_config
-/home/dany/git/nixos/configuration.nix filter=hostname_for_machine
+/home/dany/git/nixos/configuration.nix filter=machinespecifcconfig
+/home/dany/git/nixos/configuration.nix filter=hostnameformachine
