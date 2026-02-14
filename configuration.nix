@@ -10,7 +10,7 @@
       ./hardware-configuration.nix
       ./macbook-configuration.nix
     ];
-test
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
