@@ -8,14 +8,14 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./macbook-configuration.nix
+      ./MACHINE_NAME-configuration.nix
     ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "macbook-nix";
+  networking.hostName = "MACHINE_NAME-nix";
   networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Berlin";
@@ -65,7 +65,6 @@
     waybar
     vscode
     ripgrep
-    firefox
   ];
   
   programs.hyprland.enable = true;
