@@ -53,6 +53,7 @@
     alacritty
     chromium
     curl
+    firefox
     freerdp
     git
     libvirt
