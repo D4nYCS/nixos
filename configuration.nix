@@ -50,28 +50,27 @@
   };
   
   environment.systemPackages = with pkgs; [
-    wget
-    wirelesstools
-    curl
     alacritty
-    rofi
     chromium
-    git
-    winboat
+    curl
     freerdp
+    git
     libvirt
     qemu
-    swtpm
-    waybar
-    vscode
     ripgrep
+    rofi
+    swtpm
+    vscode
+    wget
+    winboat
+    wirelesstools
   ];
   
   programs.hyprland.enable = true;
-  programs.thunar.enable = true;
-  programs.xfconf.enable = true;
   programs.neovim.enable = true; 
+  programs.thunar.enable = true;
   programs.virt-manager.enable = true;
+  programs.xfconf.enable = true;
 
   services.displayManager = {
     sddm = {
