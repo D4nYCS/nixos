@@ -55,6 +55,11 @@
     curl
     freerdp
     git
+    hypridle
+    hyprlock
+    hyprpapr
+    hyprshade
+    hyprlandPlugins.hyprscrolling
     libvirt
     qemu
     ripgrep
