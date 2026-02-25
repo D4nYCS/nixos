@@ -45,27 +45,37 @@
   users.users.dany = {
     isNormalUser = true;
     description = "dany";
-    extraGroups = [ "networkmanager" "wheel" "podman" "libvirtd" ];
+    extraGroups = [ "networkmanager" "wheel" "podman" "libvirtd" "input" "scanner" "lp" ];
     packages = with pkgs; [];
   };
   
   environment.systemPackages = with pkgs; [
     alacritty
+    brave
     chromium
     curl
+    font-awesome
     freerdp
     git
     hypridle
     hyprlock
-    hyprpapr
+    hyprpaper
     hyprshade
     hyprlandPlugins.hyprscrolling
+    keepassxc
     libvirt
+    nerd-fonts.jetbrains-mono
+    pavucontrol
     qemu
     ripgrep
+    rustdesk
     rofi
+    simple-scan
     swtpm
+    syncthing
+    unzip
     vscode
+    waybar
     wget
     winboat
     wirelesstools
@@ -87,7 +97,15 @@
     user = "dany";
     };
   };  
-  
+
+  services.syncthing = {
+    enable = true;
+    openDefaultPorts = true; # Open ports in the firewall for Syncthing. (NOTE: this will not open syncthing gui port)
+    user = "dany";
+    dataDir = "/home/dany/syncthing";
+    configDir = "/home/dany/.config/syncthing";
+  };
+
   virtualisation = {
     containers.enable = true;
     podman = {
