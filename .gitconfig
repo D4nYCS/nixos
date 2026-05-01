@@ -1,3 +1,0 @@
-[filter "machinespecificconfig"]
-	clean =	sed 's/machine/MACHINE_NAME/g'
-	smudge = sed 's/MACHINE_NAME/machine/g'
