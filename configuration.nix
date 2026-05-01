@@ -53,9 +53,8 @@
     alacritty
     brave
     chromium
+    cifs-utils
     curl
-    dolphin
-    font-awesome
     freerdp
     git
     hypridle
@@ -63,9 +62,13 @@
     hyprpaper
     hyprshade
     hyprlandPlugins.hyprscrolling
+    kdePackages.dolphin
+    kdePackages.kio
+    kdePackages.kio-extras
+    kdePackages.kio-fuse
+    kdePackages.qtsvg
     keepassxc
     libvirt
-    nerd-fonts.jetbrains-mono
     pavucontrol
     qemu
     ripgrep
@@ -76,8 +79,16 @@
     unzip
     vscode
     wget
-    winboat
+    xrandr
+    #winboat
   ];
+
+  fonts.packages = with pkgs; [
+    font-awesome
+    nerd-fonts.jetbrains-mono
+  ];
+
+  nixpkgs.config.allowUnfree = true;
   
   programs.hyprland.enable = true;
   programs.neovim.enable = true; 
@@ -122,8 +133,6 @@
     };
     spiceUSBRedirection.enable = true;
   };
-
-  nixpkgs.config.allowUnfree = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
