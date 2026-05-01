@@ -54,6 +54,7 @@
     brave
     chromium
     curl
+    dolphin
     font-awesome
     freerdp
     git
