@@ -76,7 +76,7 @@
     unzip
     vscode
     wget
-    #winboat
+    winboat
   ];
   
   programs.hyprland.enable = true;
