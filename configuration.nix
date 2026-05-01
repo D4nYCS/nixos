@@ -8,14 +8,14 @@
   imports =
     [ # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
-      ./MACHINE_NAME-configuration.nix
+      ./homebase-configuration.nix
     ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "MACHINE_NAME";
+  networking.hostName = "homebase-nix";
   networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Berlin";
