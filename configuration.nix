@@ -74,7 +74,6 @@
     syncthing
     unzip
     vscode
-    waybar
     wget
     #winboat
   ];
@@ -83,6 +82,7 @@
   programs.neovim.enable = true; 
   programs.thunar.enable = true;
   programs.virt-manager.enable = true;
+  programs.waybar.enable = true;
   programs.xfconf.enable = true;
 
   services.displayManager = {
