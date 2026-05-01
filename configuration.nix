@@ -7,15 +7,15 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./MACHINE_NAME-configuration.nix
+      /etc/nixos/hardware-configuration.nix
+      ./homebase-configuration.nix
     ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "MACHINE_NAME-nix";
+  networking.hostName = "homebase-nix";
   networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Berlin";
@@ -45,7 +45,7 @@
   users.users.dany = {
     isNormalUser = true;
     description = "dany";
-    extraGroups = [ "networkmanager" "wheel" "podman" "libvirtd" "input" "scanner" "lp" ];
+    extraGroups = [ "networkmanager" "wheel" "podman" "libvirtd" "input" ];
     packages = with pkgs; [];
   };
   
@@ -68,7 +68,6 @@
     pavucontrol
     qemu
     ripgrep
-    rustdesk
     rofi
     simple-scan
     swtpm
@@ -77,8 +76,7 @@
     vscode
     waybar
     wget
-    winboat
-    wirelesstools
+    #winboat
   ];
   
   programs.hyprland.enable = true;
@@ -123,6 +121,8 @@
     };
     spiceUSBRedirection.enable = true;
   };
+
+  nixpkgs.config.allowUnfree = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
