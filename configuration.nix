@@ -12,7 +12,8 @@
     ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
+  #boot.loader.systemd-boot.enable = true;
+  boot.loader.limine.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "MACHINE_NAME";
@@ -90,12 +91,18 @@
 
   nixpkgs.config.allowUnfree = true;
   
+  programs.gamescope.enable = true;
   programs.hyprland.enable = true;
   programs.neovim.enable = true; 
   programs.thunar.enable = true;
   programs.virt-manager.enable = true;
   programs.waybar.enable = true;
   programs.xfconf.enable = true;
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+  };
 
   services.displayManager = {
     sddm = {
